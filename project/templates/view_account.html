@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ bank_account.nickname }} - Account Details
+{% endblock %}
+
+{% block main %}
+    <h1 class=" mb-3">{{ bank_account.nickname }} - Account Details</h1>
+    <p>Account Number: {{ bank_account.account_number }}</p>
+    <p>Debit Card: {{ bank_account.debit_card }}</p>
+    <p>Availible Balance: {{ "$%.2f"|format(bank_account.balance) }}</p>
+     
+{% endblock %}

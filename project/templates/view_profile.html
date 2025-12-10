@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile Page
+{% endblock %}
+
+{% block main %}
+    <h1 class="mb-3">User Profile</h1>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Full Name:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+    <p><strong>Date of Birth:</strong> {{ user.date_of_birth }}</p>
+    <p><strong>Member Since:</strong> {{ user.created_at }}</p>
+{% endblock %}

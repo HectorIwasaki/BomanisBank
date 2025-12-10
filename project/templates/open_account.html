@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Open a New {{ account_type|capitalize }}Account
+{% endblock %}
+
+{% block main %}
+        <!-- Opens a new Checking or Savings Account -->
+        <h1 class="mb-3">Open a New {{ account_type|capitalize }} Account</h1>
+        <form action="/open_account?type={{ account_type }}" method="post">
+            <div class="d-flex justify-content-center align-items-end gap-3 mb-3">
+                <!-- Account nickname -->
+                <div>
+                    <label for="nickname">Account Nickname</label>
+                    <input type="text" name="nickname" id="nickname" class="form-control" placeholder="e.g. Vacation Fund" maxlength="30" required>
+                </div>
+                <!-- Intial Deposit -->
+                <div>
+                    <label for="initial_deposit">Initial Deposit:</label>
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="initial_deposit" name="initial_deposit" placeholder="Amount" type="number" min="0.00" max="5000.00" required>
+                </div>
+                <!-- Debit card choice -->
+                <div>
+                    <label for="debit_card">Debit card?</label>
+                    <select name="debit_card" class="form-select">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Submit button -->
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">Open Account</button>
+            </div>
+        </form>
+{% endblock %}

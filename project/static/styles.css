@@ -3,3 +3,7 @@ nav .navbar-brand
 {
     font-size: xx-large;
 }
+/* Font size for Label */
+label {
+  font-size: 20px; 
+}
